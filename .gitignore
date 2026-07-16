@@ -1,0 +1,10 @@
+# Security
+.env
+
+# Local Data & Databases
+data/
+
+# Python Caches
+__pycache__/
+*.pyc
+.pytest_cache/

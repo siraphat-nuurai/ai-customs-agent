@@ -1,0 +1,11 @@
+fastapi==0.109.2
+uvicorn==0.27.0
+pydantic==2.6.1
+langchain==0.1.5
+langchain-openai==0.0.5
+langchain-community==0.0.19
+chromadb==0.4.22
+duckduckgo-search==4.4.3
+python-dotenv==1.0.1
+python-multipart==0.0.9
+tiktoken==0.5.2
