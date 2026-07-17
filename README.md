@@ -47,10 +47,11 @@ The prototype creates a sample ChromaDB vector store with:
 
 1. Install dependencies:
 
-Bash
+```bash
 # For local execution without Docker
 pip install -r backend/requirements.txt
 pip install -r frontend/requirements.txt
+```
 
 2. Get API Key:
 - Visit the OpenAI Platform (or Google AI Studio)
@@ -59,9 +60,10 @@ pip install -r frontend/requirements.txt
 
 3. Run the prototype:
 
-Bash
+```bash
 # Using Docker Compose (Recommended)
 docker-compose up --build
+```
 
 ---
 
@@ -99,7 +101,7 @@ docker-compose up --build
 
 ## Architecture
 
-![Architecture Diagram](images\ai-customs-agent-arch.drawio.png)
+![Architecture Diagram](images\ai-customs-agent-arch.png)
 
 ---
 
@@ -121,26 +123,29 @@ docker-compose up --build
 ### Adding Real Web Search API
 Replace the mock/DuckDuckGo web search with premium APIs like Tavily or SerpAPI:
 
-Python
+```python
 # Example with Tavily
 from langchain_community.tools.tavily_search import TavilySearchResults
 
 def web_search_fn(query: str) -> str:
     search = TavilySearchResults(max_results=3)
     return search.run(query)
+```
 
 ### Adding More Customs Documents
 Extend the ingestion.py pipeline to ingest bulk tariff files:
 
-Python
+```python
 vector_store.add_documents(chunked_customs_pdfs)
+```
 
 ### Custom Document Sources
 Modify the loaders to load from different government sources:
 
-Python
+```python
 # Load from URL, PDF, etc.
 from langchain_community.document_loaders import WebBaseLoader, PyPDFLoader
+```
 
 ---
 
@@ -156,6 +161,7 @@ In production, implement proper input validation, API authentication, and rate l
 ---
 
 ## Troubleshooting
+
 ### Common Issues
 1. Missing API Key: Ensure OPENAI_API_KEY (or GOOGLE_API_KEY) is set in the .env file.
 
