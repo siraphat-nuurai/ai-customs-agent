@@ -99,12 +99,7 @@ docker-compose up --build
 
 ## Architecture
 
-Plaintext
-User Query → Guardrails → Agent → Tool Selection → Tool Execution → Response
-                              ↓
-                        Memory Update
-                              ↓
-                       Context Retention
+![Architecture Diagram](images\ai-customs-agent-arch.drawio.png)
 
 ---
 
